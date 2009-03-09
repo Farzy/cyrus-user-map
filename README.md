@@ -72,7 +72,7 @@ REFERENCES
 
 * [GitHub project](http://github.com/Farzy/cyrus-user-map/)
 * [Rejecting Unknown Local Recipients with Postfix](http://www.postfix.org/LOCAL_RECIPIENT_README.html)
-* [Cyrus IMap Virtual Domains](http://cyrusimap.web.cmu.edu/imapd/install-virtdomains.html)
+* [Cyrus Imap Virtual Domains](http://cyrusimap.web.cmu.edu/imapd/install-virtdomains.html)
 
 LICENSE
 -------
