@@ -1,0 +1,5 @@
+# Periodically scan Cyrus Imap accounts and generate a user
+# map for Postfix.
+
+# Run every half hour.
+12,42 * * * *  root  /usr/local/sbin/postfix_create_usermap.rb
