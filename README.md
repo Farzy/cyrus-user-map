@@ -33,9 +33,9 @@ CONFIGURATION
 
 2) Copy the script into the server's PATH.
 
-3) Add the following line to Postfix's /etc/postfix/main.cf:
+3) Add or modify the following line to Postfix's /etc/postfix/main.cf:
 
-    local_recipient_maps = hash:/etc/postfix/cyrus_usermap
+    local_recipient_maps = hash:/etc/postfix/cyrus_usermap $alias_maps
 
 and reload the postfix configuration :
 
