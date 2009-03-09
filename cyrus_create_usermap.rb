@@ -29,22 +29,23 @@
 #################
 
 CYRUS_CMD = "/usr/sbin/ctl_mboxlist"
-USERS_MAPFILE = "/etc/postfix/cyrus_users_map"
+USERS_MAPFILE = "/etc/postfix/cyrus_usermap"
 
 # Main program
 
 if Process.uid != 0
-  abort "ERROR: #{$0} must be call as root."
+  abort "ERROR: #{$0} must be called as root."
 end
 
 File.open(USERS_MAPFILE, "w") do |outfile|
   outfile.write <<-EOT
 # This is an auto-generated file, do now modify directly.
 # File created on #{Time.now}
-# by #{$0}
+# by #{$0}.
+# See http://github.com/Farzy/cyrus-user-map/ for details.
 
 EOT
-  IO.popen("sudo -u cyrus $#{CYRUS_CMD} -d") do |pipe|
+  IO.popen("sudo -u cyrus #{CYRUS_CMD} -d") do |pipe|
     while line = pipe.gets
       # Only extract top level mailboxes like "my.domain.com!user.mylogin<TAB>..."
       outfile.puts "#{$2}@#{$1}\tOK" if line.match /^(.+)!user\.([^.\t]+)\t/
