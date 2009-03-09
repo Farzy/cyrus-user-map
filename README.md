@@ -30,6 +30,8 @@ CONFIGURATION
 * Set `USERS_MAPFILE` to the map's full path, usually in `/etc/postfix`.
 * Set `CYRUS_CMD` to Cyrus' `ctl_mboxlist` command's full path (`/usr/sbin/ctl_mboxlist`
   on Debian Linux).
+* Set `POSTMAP_CMD` to Postfix's `postmap` command's full path (`/usr/sbin/postmap`
+  on Debian Linux).
 
 2) Copy the script into the server's PATH.
 

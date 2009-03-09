@@ -7,6 +7,7 @@
 # The map uses the Postfix "hash" format.
 #
 # Date: 2009/03/09
+# URL: http://github.com/Farzy/cyrus-user-map/
 #
 # Copyright (C) 2009 Farzad FARID <ffarid@pragmatic-source.com>
 #
@@ -29,6 +30,7 @@
 #################
 
 CYRUS_CMD = "/usr/sbin/ctl_mboxlist"
+POSTMAP_CMD = "/usr/sbin/postmap"
 USERS_MAPFILE = "/etc/postfix/cyrus_usermap"
 
 # Main program
@@ -55,7 +57,7 @@ EOT
   end
 end
 # Generate the hash map
-system("postmap hash:#{USERS_MAPFILE}")
+system("#{POSTMAP_CMD} hash:#{USERS_MAPFILE}")
 
 exit 0
 
